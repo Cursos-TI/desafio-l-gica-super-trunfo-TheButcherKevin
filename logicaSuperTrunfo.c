@@ -2,7 +2,7 @@
 
 int main(){
     char estado, estado2 , cod_carta[40], cod_carta2[40], cidade[20], cidade2[20];
-    int pontos_turisticos, pontos_turisticos2;
+    int pontos_turisticos, pontos_turisticos2, EscolhaDeAtributo;
     float area, PIB, area2, PIB2, PIBpC, PIBpC2, densidade_pop, densidade_pop2;
     unsigned long int populacao, populacao2;
 
@@ -67,16 +67,86 @@ int main(){
 
     // printf("\nComparando Cartas:\n População: Carta 1 venceu (%d)\n Área: Carta 1 venceu (%d)\n PIB: Carta 1 venceu (%d)\n Pontos Turisticos: Carta 1 venceu (%d)\n Densidade Populacional: Carta 2 venceu (%d)\n PIB per Capita: Carta 1 venceu (%d)\n Super Poder: Carta 1 venceu (%d)\n", populacao > populacao2, area > area2, PIB > PIB2, pontos_turisticos > pontos_turisticos2, densidade_pop < densidade_pop2, PIBpC > PIBpC2, SuperPoder > SuperPoder2);
     
-    //Comparando Cartas
-    if (PIB > PIB2){
-        printf("\nCarta 1 ganhou com um PIB de %.2f!", PIB);
+    printf("\nQual Atributo Será Comparado? \n 1. População\n 2. Área\n 3. PIB\n 4. Pontos Turisticos\n 5. Densidade Populacional\n");
+    scanf("%d", &EscolhaDeAtributo);
+    
+    switch (EscolhaDeAtributo)
+    {
+    case 1:
+        if (populacao > populacao2)
+        {
+            printf("Carta 1, %s, ganhou com uma população de %d, maior que a de %s com um valor de %d!", cidade, populacao, cidade2, populacao2);
+        } else if (populacao < populacao2)
+        {
+            printf("Carta 2, %s, ganhou com uma população de %d, maior que a de %s com um valor de %d!", cidade2, populacao2, cidade, populacao);
+        } else {
+            printf("Empate entre as cartas!");
+        }
+        
+        break;
+    case 2:
+        if (area > area2)
+        {
+            printf("Carta 1, %s, ganhou com uma area de %.2f, maior que a de %s com um valor de %.2f!", cidade, area, cidade2, area2);
+        } else if (area < area2)
+        {
+            printf("Carta 2, %s, ganhou com uma area de %.2f, maior que a de %s com um valor de %.2f!", cidade2, area2, cidade, area);
+        } else {
+            printf("Empate entre as cartas!");
+        }
+        
+        break;
+    case 3:
+        if (PIB > PIB2)
+        {
+            printf("Carta 1, %s, ganhou com um PIB de %.2f, maior que a de %s com um valor de %.2f!", cidade, PIB, cidade2, PIB2);
+        } else if (PIB < PIB2)
+        {
+            printf("Carta 2, %s, ganhou com um PIB de %.2f, maior que a de %s com um valor de %.2f!", cidade2, PIB2, cidade, PIB);
+        } else {
+            printf("Empate entre as cartas!");
+        }
+        
+        break;
+    case 4:
+        if (pontos_turisticos > pontos_turisticos2)
+        {
+            printf("Carta 1, %s, ganhou com  %d pontos turisticos, maior que a de %s com um valor de %d!", cidade, pontos_turisticos, cidade2, pontos_turisticos2);
+        } else if (pontos_turisticos < pontos_turisticos2)
+        {
+            printf("Carta 2, %s, ganhou com  %d pontos turisticos, maior que a de %s com um valor de %d!", cidade, pontos_turisticos2, cidade2, pontos_turisticos);
+        } else {
+            printf("Empate entre as cartas!");
+        }
+        
+        break;
+    case 5:
+        if (densidade_pop < densidade_pop2)
+        {
+            printf("Carta 1, %s, ganhou com uma densidade demografica de %.2f, menor que a de %s com um valor de %.2f!", cidade, densidade_pop, cidade2, densidade_pop2);
+        } else if (densidade_pop > densidade_pop2)
+        {
+            printf("Carta 1, %s, ganhou com uma densidade demografica de %.2f, menor que a de %s com um valor de %.2f!", cidade, densidade_pop2, cidade2, densidade_pop);
+        } else {
+            printf("Empate entre as cartas!");
+        }
+        
+        break;
+    default:
+        printf("Opcao Invalida");
+        break;
     }
-    else if (PIB2 > PIB){
-        printf("\nCarta 2 ganhou com um PIB de %.2f!", PIB2);
-    }
-    else {
-        printf("\nEmpate entre as cartas");
-    }
+
+    // Comparando Cartas
+    // if (PIB > PIB2){
+    //     printf("\nCarta 1 ganhou com um PIB de %.2f!", PIB);
+    // }
+    // else if (PIB2 > PIB){
+    //     printf("\nCarta 2 ganhou com um PIB de %.2f!", PIB2);
+    // }
+    // else {
+    //     printf("\nEmpate entre as cartas");
+    // }
 
     return 0;
 }
