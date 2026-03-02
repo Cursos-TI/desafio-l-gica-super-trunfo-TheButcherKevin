@@ -68,13 +68,13 @@ int main(){
     // printf("\nComparando Cartas:\n População: Carta 1 venceu (%d)\n Área: Carta 1 venceu (%d)\n PIB: Carta 1 venceu (%d)\n Pontos Turisticos: Carta 1 venceu (%d)\n Densidade Populacional: Carta 2 venceu (%d)\n PIB per Capita: Carta 1 venceu (%d)\n Super Poder: Carta 1 venceu (%d)\n", populacao > populacao2, area > area2, PIB > PIB2, pontos_turisticos > pontos_turisticos2, densidade_pop < densidade_pop2, PIBpC > PIBpC2, SuperPoder > SuperPoder2);
     
     if (PIB > PIB2){
-        printf("Carta 1 ganhou com um PIB de %.2f!", PIB);
+        printf("\nCarta 1 ganhou com um PIB de %.2f!", PIB);
     }
     else if (PIB2 > PIB){
-        printf("Carta 2 ganhou com um PIB de %.2f!", PIB2);
+        printf("\nCarta 2 ganhou com um PIB de %.2f!", PIB2);
     }
     else {
-        printf("Empate entre as cartas");
+        printf("\nEmpate entre as cartas");
     }
 
     return 0;
